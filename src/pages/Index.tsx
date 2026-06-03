@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import WBLogo from "@/components/WBLogo";
-import { Button } from "@/components/ui/button";
 import MailerLiteForm from "@/components/MailerLiteForm";
 
 const STORAGE_BASE = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/images`;
@@ -175,13 +174,9 @@ const Index = () => {
           <p className="text-muted-foreground mb-10">
             Join the waitlist and we'll send the preview PDF immediately.
           </p>
-          <Button
-            onClick={() => scrollTo("waitlist")}
-            size="lg"
-            className="h-12 px-7 bg-navy text-parchment hover:bg-navy-deep font-semibold"
-          >
-            Get the Free Preview
-          </Button>
+          <div className="max-w-xl mx-auto">
+            <MailerLiteForm />
+          </div>
         </div>
       </section>
 
