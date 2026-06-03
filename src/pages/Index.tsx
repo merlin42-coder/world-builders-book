@@ -202,90 +202,102 @@ const Index = () => {
       </section>
 
       {/* Why This Book Exists */}
-      <section className="py-28 bg-background">
-        <div className="container max-w-3xl">
-          <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">
-            Why this book exists
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl mb-8">
-            You are already living inside a world.
-          </h2>
-          <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
-            <p>Every world has rules.</p>
-            <p>
-              Ideas about what matters.
-              <br />
-              Ideas about success.
-              <br />
-              Ideas about truth.
-              <br />
-              Ideas about how people should live.
-            </p>
-            <p>Most of us inherit these rules without noticing.</p>
-            <p>
-              World Builders lets you step inside eighteen different worlds and see reality through someone else's eyes.
-            </p>
-            <p>
-              Not the worlds that created these people.
-              <br />
-              The worlds they imagined.
-              <br />
-              The worlds they believed in.
-              <br />
-              The worlds they helped build.
-            </p>
-            <p>
-              Each chapter distills a lifetime of thinking into a single world you can explore in minutes.
-            </p>
-            <p>
-              Not a biography.
-              <br />
-              Not a textbook.
-              <br />
-              Not a novel.
-            </p>
-            <p>A map of how a remarkable mind saw reality.</p>
+      <section className="py-28 bg-navy text-parchment">
+        <div className="container">
+          <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-start">
+            {/* Left column — 60% */}
+            <div className="md:col-span-3">
+              <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-8">
+                Why this book exists
+              </p>
+              <div className="font-lora text-parchment text-[17px] leading-[1.8] space-y-6">
+                <p>History remembers what people did.</p>
+                <p>This book maps how they saw.</p>
+                <p>Michelangelo didn't just sculpt.</p>
+                <p>
+                  He believed the figure already existed inside the stone —
+                  <br />
+                  and that his only job was to remove everything that wasn't it.
+                </p>
+                <p>That's not a technique. That's a worldview.</p>
+                <p>And once you see it, you can't unsee it in your own work.</p>
+                <p>World Builders gives you 18 worldviews like that.</p>
+                <p>
+                  Not summaries. Not timelines.
+                  <br />
+                  Maps of how a remarkable mind actually operated.
+                </p>
+              </div>
+            </div>
+
+            {/* Right column — page card 40% */}
+            <div className="md:col-span-2">
+              <div
+                className="bg-navy-deep border border-gold rounded-lg p-8"
+                style={{ boxShadow: "inset 0 0 60px hsl(var(--gold) / 0.08)" }}
+              >
+                <p className="font-cinzel text-gold/80 uppercase tracking-[0.25em] text-[11px] text-center mb-6">
+                  From the book — Michelangelo
+                </p>
+                <blockquote className="font-cinzel italic text-gold text-[20px] leading-[1.6] text-center">
+                  "The struggle to emerge
+                  <br />
+                  from the stone IS the meaning.
+                  <br />
+                  Perfection is not the destination —
+                  <br />
+                  it is the direction."
+                </blockquote>
+                <div className="mt-8 mb-5 h-px bg-gold/40" />
+                <p className="font-lora italic text-parchment/70 text-[13px] text-center">
+                  Big Idea — The Subtraction
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why People Love It */}
+      {/* What Makes It Different */}
       <section className="py-28 bg-navy text-parchment">
         <div className="container max-w-3xl">
-          <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">
-            Why people love it
+          <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-4">
+            What makes it different
           </p>
-          <h2 className="font-display text-4xl md:text-5xl mb-10">
+          <h2 className="font-display text-4xl md:text-5xl mb-12">
             What readers discover
           </h2>
-          <ul className="space-y-5 text-lg text-parchment/80 leading-relaxed">
-            <li className="flex items-start gap-4">
-              <span className="text-gold mt-2 text-xs">&#9670;</span>
-              <span>Discover how different thinkers approached the same human questions</span>
-            </li>
-            <li className="flex items-start gap-4">
-              <span className="text-gold mt-2 text-xs">&#9670;</span>
-              <span>Compare worlds across history, science, art, leadership, and philosophy</span>
-            </li>
-            <li className="flex items-start gap-4">
-              <span className="text-gold mt-2 text-xs">&#9670;</span>
-              <span>Notice assumptions you didn't know you had</span>
-            </li>
-            <li className="flex items-start gap-4">
-              <span className="text-gold mt-2 text-xs">&#9670;</span>
-              <span>Borrow ideas from worlds very different from your own</span>
-            </li>
-            <li className="flex items-start gap-4">
-              <span className="text-gold mt-2 text-xs">&#9670;</span>
-              <span>See patterns that connect people separated by centuries</span>
-            </li>
-          </ul>
-          <div className="mt-16 space-y-4 text-parchment/90 leading-relaxed text-lg border-t border-gold/20 pt-10">
+
+          <div className="space-y-8">
+            {[
+              {
+                a: "Most history books tell you what Cleopatra did.",
+                b: "This one shows you what she could see from her balcony — and why that changed everything.",
+              },
+              {
+                a: "Most books about creativity quote Michelangelo.",
+                b: "This one hides something on his page that doesn't belong there. Finding it is the point.",
+              },
+              {
+                a: "Most books explain Shakespeare's plays.",
+                b: "This one asks why his world believed that stories tell truths that facts cannot.",
+              },
+            ].map((block, i) => (
+              <div key={i} className="space-y-2">
+                <p className="font-lora italic text-parchment/60 text-[17px] leading-[1.6]">
+                  {block.a}
+                </p>
+                <p className="font-lora font-medium text-parchment text-[17px] leading-[1.6]">
+                  {block.b}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 pt-10 border-t border-gold/20 space-y-3 text-center font-lora italic text-parchment text-[17px] leading-[1.6]">
             <p>You don't have to agree with every world.</p>
             <p>You only have to visit it.</p>
-            <p>
-              Sometimes that is enough to see your own more clearly.
-            </p>
+            <p>Sometimes that is enough to see your own more clearly.</p>
           </div>
         </div>
       </section>
