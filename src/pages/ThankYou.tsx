@@ -1,9 +1,13 @@
 import { useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import WBLogo from "@/components/WBLogo";
 import { Button } from "@/components/ui/button";
 import { Download, Play } from "lucide-react";
 
-const PREVIEW_PDF_URL = "/downloads/World%20Builders%20-%20The%20Book%20-%20PREVIEW.pdf";
+const { data: { publicUrl: PREVIEW_PDF_URL } } = supabase
+  .storage
+  .from("downloads")
+  .getPublicUrl("World Builders - The Book - PREVIEW.pdf");
 
 const ThankYou = () => {
   useEffect(() => {
