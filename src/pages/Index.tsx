@@ -233,7 +233,7 @@ const Index = () => {
                 style={{ boxShadow: "inset 0 0 60px hsl(var(--gold) / 0.08)" }}
               >
                 <img
-                  src={`${STORAGE_BASE}/michelangelo-big-idea.png`}
+                  src={`${STORAGE_BASE}/Michelangelo-big-idea.png`}
                   alt="Big Idea from the Michelangelo world page"
                   loading="lazy"
                   className="w-full h-full object-cover rounded-lg"
