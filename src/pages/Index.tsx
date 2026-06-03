@@ -82,7 +82,7 @@ const Index = () => {
               One hidden puzzle in each.
             </h1>
             <p className="fade-up fade-up-delay-2 text-lg md:text-xl text-parchment/80 max-w-2xl mb-10 leading-relaxed">
-              <em>World Builders</em> teaches history, science, philosophy, and strategy
+              <em>World Builders</em> reveals history, science, philosophy, and strategy
               through the minds of those who built the worlds we still live inside.
             </p>
 
