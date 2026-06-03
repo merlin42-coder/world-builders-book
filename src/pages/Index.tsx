@@ -3,13 +3,16 @@ import { useNavigate } from "react-router-dom";
 import WBLogo from "@/components/WBLogo";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import heroImg from "@/assets/wb-hero-wide.jpg";
-import worldsImg from "@/assets/wb-worlds-card.jpg";
-import comparisonsImg from "@/assets/wb-comparisons-card.jpg";
-import puzzleImg from "@/assets/wb-puzzle-card.jpg";
-import michelangelo from "@/assets/wb-thumb-michelangelo.jpg";
-import shakespeare from "@/assets/wb-thumb-shakespeare.jpg";
-import rosaParks from "@/assets/wb-thumb-rosa-parks.jpg";
+
+const STORAGE_BASE = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/images`;
+
+const heroImg = `${STORAGE_BASE}/wb-hero-wide.png`;
+const worldsImg = `${STORAGE_BASE}/wb-worlds-card.png`;
+const comparisonsImg = `${STORAGE_BASE}/wb-comparisons-card.png`;
+const puzzleImg = `${STORAGE_BASE}/wb-puzzle-card.png`;
+const michelangelo = `${STORAGE_BASE}/wb-thumb-michelangelo.png`;
+const shakespeare = `${STORAGE_BASE}/wb-thumb-shakespeare.png`;
+const rosaParks = `${STORAGE_BASE}/wb-thumb-rosa-parks.png`;
 
 const MAILERLITE_ENDPOINT =
   "https://assets.mailerlite.com/jsonp/1868409/forms/42139146/subscribe";
