@@ -11,7 +11,7 @@ const puzzleImg = `${STORAGE_BASE}/wb-puzzle-card.png`;
 const michelangelo = `${STORAGE_BASE}/wb-thumb-michelangelo.png`;
 const shakespeare = `${STORAGE_BASE}/wb-thumb-shakespeare.png`;
 const sunTzu = `${STORAGE_BASE}/wb-thumb-sun_tzu.png`;
-const cleopatra = `${STORAGE_BASE}/wb-thumb-cleopatra-2.png`;
+const cleopatra = `${STORAGE_BASE}/wb-thumb-cleopatra-3.png`;
 const alexander = `${STORAGE_BASE}/wb-thumb-alexander.png`;
 const yokoOno = `${STORAGE_BASE}/wb-thumb-yoko-ono.png`;
 
