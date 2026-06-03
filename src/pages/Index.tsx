@@ -22,17 +22,17 @@ const inside = [
   {
     title: "18 Worlds",
     img: worldsImg,
-    body: "Each figure presented as a coherent world — its beliefs, rules, logic, and atmosphere.",
+    body: "Each World Builder presented as a coherent world — its beliefs, rules, logic, and atmosphere.",
   },
   {
-    title: "Comparisons",
+    title: "World vs. World",
     img: comparisonsImg,
-    body: "How worlds weigh against each other across history, science, philosophy, and strategy.",
+    body: "Discover where worlds agree, clash, and shape one another across history, science, philosophy, and strategy.",
   },
   {
     title: "Hidden Puzzles",
     img: puzzleImg,
-    body: "A mismatch puzzle is woven into every world. Find it, and the world rearranges itself.",
+    body: "Every world hides something that doesn't belong. Find it, and the world rearranges itself.",
   },
 ];
 
