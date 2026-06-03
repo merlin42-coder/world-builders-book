@@ -100,7 +100,7 @@ const Index = () => {
       </section>
 
       {/* What's Inside */}
-      <section id="inside" className="py-28 bg-background">
+      <section id="inside" className="py-28 bg-navy text-parchment">
         <div className="container">
           <div className="max-w-2xl mb-16">
             <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">What's inside</p>
@@ -113,7 +113,7 @@ const Index = () => {
             {inside.map((item) => (
               <article
                 key={item.title}
-                className="group bg-card border border-border rounded-lg overflow-hidden hover:border-gold/60 transition-colors"
+                className="group bg-navy-deep/80 border border-gold/40 rounded-lg overflow-hidden hover:border-gold/70 transition-colors"
               >
                 <div className="aspect-square overflow-hidden bg-navy-deep">
                   <img
@@ -126,8 +126,8 @@ const Index = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-display text-2xl mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.body}</p>
+                  <h3 className="font-cinzel text-gold text-[18px] uppercase tracking-wider mb-3">{item.title}</h3>
+                  <p className="font-lora text-parchment/85 text-[15px] leading-relaxed">{item.body}</p>
                 </div>
               </article>
             ))}
