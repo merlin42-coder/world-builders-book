@@ -10,12 +10,21 @@ const comparisonsImg = `${STORAGE_BASE}/wb-comparisons-card.png`;
 const puzzleImg = `${STORAGE_BASE}/wb-puzzle-card.png`;
 const michelangelo = `${STORAGE_BASE}/wb-thumb-michelangelo.png`;
 const shakespeare = `${STORAGE_BASE}/wb-thumb-shakespeare.png`;
-const rosaParks = `${STORAGE_BASE}/wb-thumb-rosa-parks.png`;
+const sunTzu = `${STORAGE_BASE}/wb-thumb-sun_tzu.png`;
+const cleopatra = `${STORAGE_BASE}/wb-thumb-cleopatra-2.png`;
+const alexander = `${STORAGE_BASE}/wb-thumb-alexander.png`;
+const yokoOno = `${STORAGE_BASE}/wb-thumb-yoko-ono.png`;
 
-const figures = [
+const ancientWorlds = [
+  { name: "Sun Tzu", role: "The Strategist's World", img: sunTzu },
+  { name: "Cleopatra", role: "The Queen's World", img: cleopatra },
+  { name: "Alexander the Great", role: "The Conqueror's World", img: alexander },
+];
+
+const moreWorlds = [
   { name: "Michelangelo", role: "The Artist's World", img: michelangelo },
-  { name: "Shakespeare", role: "The Playwright's World", img: shakespeare },
-  { name: "Rosa Parks", role: "The Quiet Refusal", img: rosaParks },
+  { name: "William Shakespeare", role: "The Playwright's World", img: shakespeare },
+  { name: "Yoko Ono", role: "The Artist of Possibilities", img: yokoOno },
 ];
 
 const inside = [
@@ -132,12 +141,45 @@ const Index = () => {
           <div className="max-w-2xl mb-16">
             <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">From the preview</p>
             <h2 className="font-display text-4xl md:text-5xl">
-              Step inside the first <span className="text-gold italic">three worlds.</span>
+              Step inside the <span className="text-gold italic">Ancient Worlds.</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {figures.map((f) => (
+            {ancientWorlds.map((f) => (
+              <figure key={f.name} className="group">
+                <div className="aspect-[4/5] overflow-hidden rounded-lg bg-navy-deep border border-gold/20">
+                  <img
+                    src={f.img}
+                    alt={`Portrait of ${f.name}`}
+                    loading="lazy"
+                    width={1024}
+                    height={1280}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <figcaption className="mt-5">
+                  <p className="font-display text-2xl">{f.name}</p>
+                  <p className="text-sm uppercase tracking-[0.2em] text-gold mt-1">{f.role}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* More inside the book */}
+      <section className="py-28 bg-navy text-parchment">
+        <div className="container">
+          <div className="max-w-2xl mb-16">
+            <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">More inside the book</p>
+            <h2 className="font-display text-4xl md:text-5xl">
+              And fifteen more worlds <span className="text-gold italic">beyond.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {moreWorlds.map((f) => (
               <figure key={f.name} className="group">
                 <div className="aspect-[4/5] overflow-hidden rounded-lg bg-navy-deep border border-gold/20">
                   <img
