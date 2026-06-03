@@ -41,7 +41,7 @@ const inside = [
   {
     title: "Hidden Puzzles",
     img: puzzleImg,
-    body: "Every world hides something that doesn't belong. Find it, and the world rearranges itself.",
+    body: "Stay curious. Always ask: why is that object there? Every world hides one thing that doesn't belong. Find it, figure out where it came from, and the world rearranges itself.",
   },
 ];
 
