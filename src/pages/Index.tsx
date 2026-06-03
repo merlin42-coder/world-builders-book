@@ -49,14 +49,8 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Nav */}
       <header className="absolute top-0 left-0 right-0 z-20">
-        <div className="container flex items-center justify-between py-6">
+        <div className="container flex items-center py-6">
           <WBLogo className="[&_span]:text-parchment" />
-          <button
-            onClick={() => scrollTo("inside")}
-            className="text-sm tracking-[0.2em] uppercase text-parchment/90 hover:text-gold transition-colors"
-          >
-            Preview
-          </button>
         </div>
       </header>
 
