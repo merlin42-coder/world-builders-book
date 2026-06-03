@@ -3,8 +3,7 @@ import WBLogo from "@/components/WBLogo";
 import { Button } from "@/components/ui/button";
 import { Download, Play } from "lucide-react";
 
-const PREVIEW_PDF_URL =
-  "https://drive.google.com/uc?export=download&id=17G74sN45qm3XiVb0U_jw1MOO4kUA43Wx";
+const PREVIEW_PDF_URL = "/downloads/World%20Builders%20-%20The%20Book%20-%20PREVIEW.pdf";
 
 const ThankYou = () => {
   useEffect(() => {
