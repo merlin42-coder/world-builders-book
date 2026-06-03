@@ -41,7 +41,7 @@ const inside = [
   {
     title: "Hidden Puzzles",
     img: puzzleImg,
-    body: "Every world hides something that doesn't belong. Find it, and the world rearranges itself.",
+    body: "Stay curious. Always ask: why is that object there? Every world hides one thing that doesn't belong. Find it, figure out where it came from, and the world rearranges itself.",
   },
 ];
 
@@ -84,9 +84,8 @@ const Index = () => {
               Eighteen <span className="italic text-gold">worlds.</span><br />
               One hidden puzzle in each.
             </h1>
-            <p className="fade-up fade-up-delay-2 text-lg md:text-xl text-parchment/80 max-w-2xl mb-10 leading-relaxed">
-              <em>World Builders</em> reveals history, science, philosophy, and strategy
-              through the minds of those who built the worlds we still live inside.
+            <p className="fade-up fade-up-delay-2 font-lora text-[17px] text-parchment/80 max-w-2xl mb-10 leading-relaxed">
+              A heightened capacity to decode system patterns others completely miss — that's what these 18 worlds leave you with.
             </p>
 
             <div id="waitlist" className="fade-up fade-up-delay-3 max-w-xl">
@@ -276,6 +275,69 @@ const Index = () => {
             <p>You don't have to agree with every world.</p>
             <p>You only have to visit it.</p>
             <p>Sometimes that's enough to see your own more clearly.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Progress Loop */}
+      <section className="py-16 bg-navy text-parchment">
+        <div className="container">
+          <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-12 text-center">
+            How you read it
+          </p>
+
+          <div className="flex flex-wrap justify-center items-start gap-y-10 md:flex-nowrap md:gap-0">
+            {/* Step 1 */}
+            <div className="w-1/2 md:w-auto flex flex-col items-center text-center px-3" style={{ maxWidth: "140px" }}>
+              <div className="w-12 h-12 mb-4 rounded-full border border-gold flex items-center justify-center text-gold">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <p className="font-cinzel text-gold text-[13px] uppercase tracking-wider mb-2">1. Observe</p>
+              <p className="font-lora text-parchment text-[14px] leading-snug">Hunt for hidden details in the art and text.</p>
+            </div>
+
+            <span className="hidden md:inline text-gold/50 text-[20px] mx-4 mt-3.5">→</span>
+
+            {/* Step 2 */}
+            <div className="w-1/2 md:w-auto flex flex-col items-center text-center px-3" style={{ maxWidth: "140px" }}>
+              <div className="w-12 h-12 mb-4 rounded-full border border-gold flex items-center justify-center text-gold">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+                </svg>
+              </div>
+              <p className="font-cinzel text-gold text-[13px] uppercase tracking-wider mb-2">2. Capture</p>
+              <p className="font-lora text-parchment text-[14px] leading-snug">Lock in the habits, rules, and core beliefs.</p>
+            </div>
+
+            <span className="hidden md:inline text-gold/50 text-[20px] mx-4 mt-3.5">→</span>
+
+            {/* Step 3 */}
+            <div className="w-1/2 md:w-auto flex flex-col items-center text-center px-3" style={{ maxWidth: "140px" }}>
+              <div className="w-12 h-12 mb-4 rounded-full border border-gold flex items-center justify-center text-gold">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.35-4.35" />
+                </svg>
+              </div>
+              <p className="font-cinzel text-gold text-[13px] uppercase tracking-wider mb-2">3. Connect</p>
+              <p className="font-lora text-parchment text-[14px] leading-snug">Isolate the glitch and match it to its true home.</p>
+            </div>
+
+            <span className="hidden md:inline text-gold/50 text-[20px] mx-4 mt-3.5">→</span>
+
+            {/* Step 4 */}
+            <div className="w-1/2 md:w-auto flex flex-col items-center text-center px-3" style={{ maxWidth: "140px" }}>
+              <div className="w-12 h-12 mb-4 rounded-full border border-gold flex items-center justify-center text-gold">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <p className="font-cinzel text-gold text-[13px] uppercase tracking-wider mb-2">4. Evolve</p>
+              <p className="font-lora text-parchment text-[14px] leading-snug">Clear the system map and advance to harder tiers.</p>
+            </div>
           </div>
         </div>
       </section>
