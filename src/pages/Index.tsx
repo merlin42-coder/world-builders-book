@@ -210,22 +210,18 @@ const Index = () => {
               <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-8">
                 Why this book exists
               </p>
-              <div className="font-lora text-parchment text-[17px] leading-[1.8] space-y-6">
-                <p>History remembers what people did.</p>
-                <p>This book maps how they saw.</p>
-                <p>Michelangelo didn't just sculpt.</p>
+              <div className="font-lora text-parchment text-[18px] leading-[1.9] space-y-6">
+                <p>History is full of what people did.</p>
+                <p>Dates, decisions, consequences.</p>
                 <p>
-                  He believed the figure already existed inside the stone —
-                  <br />
-                  and that his only job was to remove everything that wasn't it.
+                  But Michelangelo didn't wake up one morning and decide to be a
+                  genius. He woke up believing that the figure was already inside
+                  the stone — and that sculpture was just the act of removing
+                  everything that wasn't it.
                 </p>
-                <p>That's not a technique. That's a worldview.</p>
-                <p>And once you see it, you can't unsee it in your own work.</p>
-                <p>World Builders gives you 18 worldviews like that.</p>
                 <p>
-                  Not summaries. Not timelines.
-                  <br />
-                  Maps of how a remarkable mind actually operated.
+                  That's the difference between knowing history and understanding
+                  it. World Builders is about the second thing.
                 </p>
               </div>
             </div>
@@ -233,25 +229,15 @@ const Index = () => {
             {/* Right column — page card 40% */}
             <div className="md:col-span-2">
               <div
-                className="bg-navy-deep border border-gold rounded-lg p-8"
+                className="bg-navy-deep border border-gold rounded-lg overflow-hidden"
                 style={{ boxShadow: "inset 0 0 60px hsl(var(--gold) / 0.08)" }}
               >
-                <p className="font-cinzel text-gold/80 uppercase tracking-[0.25em] text-[11px] text-center mb-6">
-                  From the book — Michelangelo
-                </p>
-                <blockquote className="font-cinzel italic text-gold text-[20px] leading-[1.6] text-center">
-                  "The struggle to emerge
-                  <br />
-                  from the stone IS the meaning.
-                  <br />
-                  Perfection is not the destination —
-                  <br />
-                  it is the direction."
-                </blockquote>
-                <div className="mt-8 mb-5 h-px bg-gold/40" />
-                <p className="font-lora italic text-parchment/70 text-[13px] text-center">
-                  Big Idea — The Subtraction
-                </p>
+                <img
+                  src={`${STORAGE_BASE}/MICHELANGELO-BIG-IDEA.png`}
+                  alt="Big Idea from the Michelangelo world page"
+                  loading="lazy"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
             </div>
           </div>
@@ -260,44 +246,36 @@ const Index = () => {
 
       {/* What Makes It Different */}
       <section className="py-28 bg-navy text-parchment">
-        <div className="container max-w-3xl">
-          <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-4">
+        <div className="container" style={{ maxWidth: "680px" }}>
+          <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-10 text-center">
             What makes it different
           </p>
-          <h2 className="font-display text-4xl md:text-5xl mb-12">
-            What readers discover
-          </h2>
 
-          <div className="space-y-8">
-            {[
-              {
-                a: "Most history books tell you what Cleopatra did.",
-                b: "This one shows you what she could see from her balcony — and why that changed everything.",
-              },
-              {
-                a: "Most books about creativity quote Michelangelo.",
-                b: "This one hides something on his page that doesn't belong there. Finding it is the point.",
-              },
-              {
-                a: "Most books explain Shakespeare's plays.",
-                b: "This one asks why his world believed that stories tell truths that facts cannot.",
-              },
-            ].map((block, i) => (
-              <div key={i} className="space-y-2">
-                <p className="font-lora italic text-parchment/60 text-[17px] leading-[1.6]">
-                  {block.a}
-                </p>
-                <p className="font-lora font-medium text-parchment text-[17px] leading-[1.6]">
-                  {block.b}
-                </p>
-              </div>
-            ))}
+          <div className="font-lora text-parchment text-[18px] leading-[1.9] space-y-8 text-center">
+            <p>
+              Most books about remarkable people tell you what they achieved.
+              This one asks what they had to believe first — before any of it
+              was possible.
+            </p>
+            <p>
+              Cleopatra had to believe that power was a language, not a
+              birthright. Shakespeare had to believe that a story could say
+              things a fact never could. Michelangelo had to believe that
+              beauty wasn't added — it was revealed.
+            </p>
+            <p>
+              Every world in this book works the same way. You don't read
+              about these people. You step inside how they saw — and something
+              in your own thinking quietly shifts.
+            </p>
           </div>
 
-          <div className="mt-16 pt-10 border-t border-gold/20 space-y-3 text-center font-lora italic text-parchment text-[17px] leading-[1.6]">
+          <div className="mt-14 mb-10 h-px bg-gold/30" />
+
+          <div className="space-y-3 text-center font-lora italic text-parchment text-[17px] leading-[1.6]">
             <p>You don't have to agree with every world.</p>
             <p>You only have to visit it.</p>
-            <p>Sometimes that is enough to see your own more clearly.</p>
+            <p>Sometimes that's enough to see your own more clearly.</p>
           </div>
         </div>
       </section>
