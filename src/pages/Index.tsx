@@ -84,9 +84,8 @@ const Index = () => {
               Eighteen <span className="italic text-gold">worlds.</span><br />
               One hidden puzzle in each.
             </h1>
-            <p className="fade-up fade-up-delay-2 text-lg md:text-xl text-parchment/80 max-w-2xl mb-10 leading-relaxed">
-              <em>World Builders</em> reveals history, science, philosophy, and strategy
-              through the minds of those who built the worlds we still live inside.
+            <p className="fade-up fade-up-delay-2 font-lora text-[17px] text-parchment/80 max-w-2xl mb-10 leading-relaxed">
+              A heightened capacity to decode system patterns others completely miss — that's what these 18 worlds leave you with.
             </p>
 
             <div id="waitlist" className="fade-up fade-up-delay-3 max-w-xl">
