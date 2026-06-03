@@ -3,7 +3,8 @@ import WBLogo from "@/components/WBLogo";
 import { Button } from "@/components/ui/button";
 import { Download, Play } from "lucide-react";
 
-const PREVIEW_PDF_URL = "/world-builders-preview.pdf";
+const PREVIEW_PDF_URL =
+  "https://drive.google.com/uc?export=download&id=17G74sN45qm3XiVb0U_jw1MOO4kUA43Wx";
 
 const ThankYou = () => {
   useEffect(() => {
@@ -27,7 +28,7 @@ const ThankYou = () => {
             introduction, the timeline, and the first three illustrated worlds.
           </p>
 
-          <a href={PREVIEW_PDF_URL} download>
+          <a href={PREVIEW_PDF_URL} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-gold text-navy-deep hover:bg-gold/90 font-semibold px-8 h-12">
               <Download className="mr-2 h-5 w-5" />
               Download the Preview PDF
