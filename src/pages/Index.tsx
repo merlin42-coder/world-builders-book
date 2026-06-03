@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import WBLogo from "@/components/WBLogo";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
+import MailerLiteForm from "@/components/MailerLiteForm";
 
 const STORAGE_BASE = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/images`;
 
@@ -13,9 +12,6 @@ const puzzleImg = `${STORAGE_BASE}/wb-puzzle-card.png`;
 const michelangelo = `${STORAGE_BASE}/wb-thumb-michelangelo.png`;
 const shakespeare = `${STORAGE_BASE}/wb-thumb-shakespeare.png`;
 const rosaParks = `${STORAGE_BASE}/wb-thumb-rosa-parks.png`;
-
-const MAILERLITE_ENDPOINT =
-  "https://assets.mailerlite.com/jsonp/1868409/forms/42139146/subscribe";
 
 const figures = [
   { name: "Michelangelo", role: "The Artist's World", img: michelangelo },
@@ -42,38 +38,9 @@ const inside = [
 ];
 
 const Index = () => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     document.title = "World Builders — The Book";
   }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-      toast.error("Please enter a valid email address.");
-      return;
-    }
-    setLoading(true);
-    try {
-      const fd = new FormData();
-      fd.append("fields[email]", email);
-      fd.append("ml-submit", "1");
-      fd.append("anticsrf", "true");
-      await fetch(MAILERLITE_ENDPOINT, {
-        method: "POST",
-        body: fd,
-        mode: "no-cors",
-      });
-      navigate("/thank-you");
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -120,28 +87,9 @@ const Index = () => {
               through the minds of those who built the worlds we still live inside.
             </p>
 
-            <form
-              onSubmit={handleSubmit}
-              className="fade-up fade-up-delay-3 flex flex-col sm:flex-row gap-3 max-w-xl"
-            >
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
-                aria-label="Email address"
-                className="flex-1 h-12 px-4 rounded-md bg-parchment/95 text-foreground placeholder:text-muted-foreground border border-gold/30 focus:outline-none focus:ring-2 focus:ring-gold"
-              />
-              <Button
-                type="submit"
-                disabled={loading}
-                size="lg"
-                className="h-12 px-7 bg-gold text-navy-deep hover:bg-gold/90 font-semibold"
-              >
-                {loading ? "Sending…" : "Get the Free Preview"}
-              </Button>
-            </form>
+            <div id="waitlist" className="fade-up fade-up-delay-3 max-w-xl">
+              <MailerLiteForm />
+            </div>
             <p className="fade-up fade-up-delay-4 text-xs text-parchment/60 mt-4">
               Join the waitlist. We'll email you the preview PDF and launch news. No spam.
             </p>
@@ -227,28 +175,13 @@ const Index = () => {
           <p className="text-muted-foreground mb-10">
             Join the waitlist and we'll send the preview PDF immediately.
           </p>
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
+          <Button
+            onClick={() => scrollTo("waitlist")}
+            size="lg"
+            className="h-12 px-7 bg-navy text-parchment hover:bg-navy-deep font-semibold"
           >
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              aria-label="Email address"
-              className="flex-1 h-12 px-4 rounded-md bg-card border border-border focus:outline-none focus:ring-2 focus:ring-gold"
-            />
-            <Button
-              type="submit"
-              disabled={loading}
-              size="lg"
-              className="h-12 px-7 bg-navy text-parchment hover:bg-navy-deep font-semibold"
-            >
-              {loading ? "Sending…" : "Get the Free Preview"}
-            </Button>
-          </form>
+            Get the Free Preview
+          </Button>
         </div>
       </section>
 
