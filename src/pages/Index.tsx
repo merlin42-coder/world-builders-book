@@ -103,7 +103,7 @@ const Index = () => {
         <div className="container">
           <div className="max-w-2xl mb-16">
             <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">What's inside</p>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight">
+            <h2 className="font-display text-4xl md:text-5xl">
               A book that behaves like an <span className="italic text-gold">atlas</span> of minds.
             </h2>
           </div>
@@ -206,7 +206,7 @@ const Index = () => {
           <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-start">
             {/* Left column — 60% */}
             <div className="md:col-span-3">
-              <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-8">
+              <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">
                 Why this book exists
               </p>
               <div className="font-lora text-parchment text-[18px] leading-[1.9] space-y-6">
@@ -246,7 +246,7 @@ const Index = () => {
       {/* What Makes It Different */}
       <section className="py-28 bg-navy text-parchment">
         <div className="container" style={{ maxWidth: "680px" }}>
-          <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-10 text-center">
+          <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4 text-center">
             What makes it different
           </p>
 
@@ -282,7 +282,7 @@ const Index = () => {
       {/* Progress Loop */}
       <section className="py-16 bg-navy text-parchment">
         <div className="container">
-          <p className="font-cinzel text-gold/80 uppercase tracking-[0.3em] text-xs mb-12 text-center">
+          <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4 text-center">
             How you read it
           </p>
 
