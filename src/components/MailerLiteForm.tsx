@@ -17,7 +17,6 @@ const schema = z.object({
     .trim()
     .email({ message: "Please enter a valid email address." })
     .max(255),
-  preferred_world_builders: z.string().trim().max(200).optional(),
 });
 
 const MailerLiteForm = () => {
