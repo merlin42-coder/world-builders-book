@@ -21,7 +21,6 @@ const schema = z.object({
 
 const MailerLiteForm = () => {
   const [email, setEmail] = useState("");
-  const [preferred, setPreferred] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -31,7 +30,6 @@ const MailerLiteForm = () => {
 
     const parsed = schema.safeParse({
       email,
-      preferred_world_builders: preferred,
     });
     if (!parsed.success) {
       setError(parsed.error.issues[0]?.message ?? "Invalid input.");
