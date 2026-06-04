@@ -40,12 +40,6 @@ const MailerLiteForm = () => {
 
     const body = new FormData();
     body.append("fields[email]", parsed.data.email);
-    if (parsed.data.preferred_world_builders) {
-      body.append(
-        "fields[preferred_world_builders]",
-        parsed.data.preferred_world_builders,
-      );
-    }
     body.append("ml-submit", "1");
     body.append("anticsrf", "true");
 
