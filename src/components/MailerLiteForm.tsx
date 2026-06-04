@@ -17,12 +17,10 @@ const schema = z.object({
     .trim()
     .email({ message: "Please enter a valid email address." })
     .max(255),
-  preferred_world_builders: z.string().trim().max(200).optional(),
 });
 
 const MailerLiteForm = () => {
   const [email, setEmail] = useState("");
-  const [preferred, setPreferred] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -32,7 +30,6 @@ const MailerLiteForm = () => {
 
     const parsed = schema.safeParse({
       email,
-      preferred_world_builders: preferred,
     });
     if (!parsed.success) {
       setError(parsed.error.issues[0]?.message ?? "Invalid input.");
@@ -43,12 +40,6 @@ const MailerLiteForm = () => {
 
     const body = new FormData();
     body.append("fields[email]", parsed.data.email);
-    if (parsed.data.preferred_world_builders) {
-      body.append(
-        "fields[preferred_world_builders]",
-        parsed.data.preferred_world_builders,
-      );
-    }
     body.append("ml-submit", "1");
     body.append("anticsrf", "true");
 
@@ -77,16 +68,6 @@ const MailerLiteForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         maxLength={255}
-        className="w-full h-12 px-4 rounded-md bg-navy-deep/60 border border-gold/40 text-parchment placeholder:text-parchment/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/30 transition-colors"
-      />
-      <input
-        type="text"
-        name="fields[preferred_world_builders]"
-        placeholder="A World Builder you'd love to see (optional)"
-        aria-label="Preferred world builder (optional)"
-        value={preferred}
-        onChange={(e) => setPreferred(e.target.value)}
-        maxLength={200}
         className="w-full h-12 px-4 rounded-md bg-navy-deep/60 border border-gold/40 text-parchment placeholder:text-parchment/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/30 transition-colors"
       />
       <button
