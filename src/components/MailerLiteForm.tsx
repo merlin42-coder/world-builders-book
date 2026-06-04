@@ -70,16 +70,6 @@ const MailerLiteForm = () => {
         maxLength={255}
         className="w-full h-12 px-4 rounded-md bg-navy-deep/60 border border-gold/40 text-parchment placeholder:text-parchment/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/30 transition-colors"
       />
-      <input
-        type="text"
-        name="fields[preferred_world_builders]"
-        placeholder="A World Builder you'd love to see (optional)"
-        aria-label="Preferred world builder (optional)"
-        value={preferred}
-        onChange={(e) => setPreferred(e.target.value)}
-        maxLength={200}
-        className="w-full h-12 px-4 rounded-md bg-navy-deep/60 border border-gold/40 text-parchment placeholder:text-parchment/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/30 transition-colors"
-      />
       <button
         type="submit"
         disabled={submitting}
