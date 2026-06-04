@@ -73,6 +73,7 @@ const MailerLiteForm = () => {
         required
         autoComplete="email"
         placeholder="you@example.com"
+        aria-label="Email address"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         maxLength={255}
@@ -82,6 +83,7 @@ const MailerLiteForm = () => {
         type="text"
         name="fields[preferred_world_builders]"
         placeholder="A World Builder you'd love to see (optional)"
+        aria-label="Preferred world builder (optional)"
         value={preferred}
         onChange={(e) => setPreferred(e.target.value)}
         maxLength={200}

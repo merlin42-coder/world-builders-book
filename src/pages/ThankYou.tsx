@@ -24,7 +24,7 @@ const ThankYou = () => {
         <section className="text-center fade-up">
           <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">You're on the list</p>
           <h1 className="font-display text-5xl md:text-6xl leading-tight mb-6">
-            Welcome, <span className="text-gold italic">explorer.</span>
+            Thank you — <span className="text-gold italic">Your preview is ready</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
             Your free preview of <em>World Builders</em> is ready. Inside you'll find the
