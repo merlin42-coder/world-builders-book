@@ -9,15 +9,10 @@ const { data: { publicUrl: PREVIEW_PDF_URL } } = supabase
   .from("downloads")
   .getPublicUrl("World Builders - The Book - PREVIEW.pdf");
 
-const { data: { publicUrl: NEWTON_COVER_URL } } = supabase
+const { data: { publicUrl: SHAKESPEARE_COVER_URL } } = supabase
   .storage
   .from("images")
-  .getPublicUrl("newton-podcast-cover.png");
-
-const { data: { publicUrl: MICHELANGELO_COVER_URL } } = supabase
-  .storage
-  .from("images")
-  .getPublicUrl("michelangelo-odcast-cover.png");
+  .getPublicUrl("shakespeare-podcast-cover.png");
 
 const ThankYou = () => {
   useEffect(() => {
@@ -55,26 +50,22 @@ const ThankYou = () => {
 
         <section className="mt-24 fade-up fade-up-delay-1">
           <h2 className="font-display text-3xl md:text-4xl text-center mb-3">
-            Watch the <span className="text-gold">World Builders</span> videos
+            Watch the <span className="text-gold">World Builders</span> video
           </h2>
           <p className="text-center text-muted-foreground mb-12">
-            Short companion films for the book — watch on YouTube.
+            A short companion film for the book — watch on YouTube.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="max-w-2xl mx-auto">
             <a
-              href="https://www.youtube.com/watch?v=oJS-Ems1e7w"
+              href="https://www.youtube.com/watch?v=E0RZBIk9lXU"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("https://www.youtube.com/watch?v=oJS-Ems1e7w", "_blank", "noopener,noreferrer");
-              }}
-              className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy cursor-pointer"
+              className="group relative block aspect-video rounded-lg overflow-hidden border border-border bg-navy cursor-pointer"
             >
               <img
-                src={NEWTON_COVER_URL}
-                alt="Newton's World cover"
+                src={SHAKESPEARE_COVER_URL}
+                alt="Shakespeare's World cover"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/40 transition-colors" />
@@ -82,32 +73,7 @@ const ThankYou = () => {
                 <div className="h-16 w-16 rounded-full border-2 border-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform bg-navy/50 backdrop-blur-sm">
                   <Play className="h-6 w-6 text-gold ml-1" />
                 </div>
-                <p className="font-display text-2xl">Newton's World</p>
-                <p className="text-xs uppercase tracking-[0.3em] text-gold-soft mt-2">Watch on YouTube</p>
-              </div>
-            </a>
-
-            <a
-              href="https://www.youtube.com/watch?v=fysSGaVq4aA"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("https://www.youtube.com/watch?v=fysSGaVq4aA", "_blank", "noopener,noreferrer");
-              }}
-              className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy cursor-pointer"
-            >
-              <img
-                src={MICHELANGELO_COVER_URL}
-                alt="Michelangelo's World cover"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/40 transition-colors" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-parchment">
-                <div className="h-16 w-16 rounded-full border-2 border-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform bg-navy/50 backdrop-blur-sm">
-                  <Play className="h-6 w-6 text-gold ml-1" />
-                </div>
-                <p className="font-display text-2xl">Michelangelo's World</p>
+                <p className="font-display text-2xl">Shakespeare's World</p>
                 <p className="text-xs uppercase tracking-[0.3em] text-gold-soft mt-2">Watch on YouTube</p>
               </div>
             </a>
