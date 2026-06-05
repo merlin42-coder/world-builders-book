@@ -9,6 +9,16 @@ const { data: { publicUrl: PREVIEW_PDF_URL } } = supabase
   .from("downloads")
   .getPublicUrl("World Builders - The Book - PREVIEW.pdf");
 
+const { data: { publicUrl: NEWTON_COVER_URL } } = supabase
+  .storage
+  .from("images")
+  .getPublicUrl("newton-podcast-cover.png");
+
+const { data: { publicUrl: MICHELANGELO_COVER_URL } } = supabase
+  .storage
+  .from("images")
+  .getPublicUrl("michelangelo-odcast-cover.png");
+
 const ThankYou = () => {
   useEffect(() => {
     document.title = "Thank you — World Builders";
@@ -48,25 +58,51 @@ const ThankYou = () => {
             Watch the <span className="text-gold">World Builders</span> videos
           </h2>
           <p className="text-center text-muted-foreground mb-12">
-            Short companion films for the book — premiering soon.
+            Short companion films for the book — watch on YouTube.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {[1, 2].map((n) => (
-              <div
-                key={n}
-                className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-navy to-navy-deep" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-parchment">
-                  <div className="h-16 w-16 rounded-full border-2 border-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Play className="h-6 w-6 text-gold ml-1" />
-                  </div>
-                  <p className="font-display text-2xl">Video {n}</p>
-                  <p className="text-xs uppercase tracking-[0.3em] text-gold-soft mt-2">Coming Soon</p>
+            <a
+              href="https://www.youtube.com/watch?v=oJS-Ems1e7w"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy"
+            >
+              <img
+                src={NEWTON_COVER_URL}
+                alt="Newton's World cover"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/40 transition-colors" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-parchment">
+                <div className="h-16 w-16 rounded-full border-2 border-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform bg-navy/50 backdrop-blur-sm">
+                  <Play className="h-6 w-6 text-gold ml-1" />
                 </div>
+                <p className="font-display text-2xl">Newton's World</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-gold-soft mt-2">Watch on YouTube</p>
               </div>
-            ))}
+            </a>
+
+            <a
+              href="https://www.youtube.com/watch?v=fysSGaVq4aA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy"
+            >
+              <img
+                src={MICHELANGELO_COVER_URL}
+                alt="Michelangelo's World cover"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/40 transition-colors" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-parchment">
+                <div className="h-16 w-16 rounded-full border-2 border-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform bg-navy/50 backdrop-blur-sm">
+                  <Play className="h-6 w-6 text-gold ml-1" />
+                </div>
+                <p className="font-display text-2xl">Michelangelo's World</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-gold-soft mt-2">Watch on YouTube</p>
+              </div>
+            </a>
           </div>
         </section>
       </main>
