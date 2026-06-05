@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type MouseEvent } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import WBLogo from "@/components/WBLogo";
 import { Button } from "@/components/ui/button";
@@ -14,10 +14,19 @@ const { data: { publicUrl: SHAKESPEARE_COVER_URL } } = supabase
   .from("images")
   .getPublicUrl("shakespeare-podcast-cover.png");
 
+const SHAKESPEARE_VIDEO_URL = "https://www.youtube.com/watch?v=E0RZBIk9lXU";
+
 const ThankYou = () => {
   useEffect(() => {
     document.title = "Thank you — World Builders";
   }, []);
+
+  const openShakespeareVideo = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
+    window.open(SHAKESPEARE_VIDEO_URL, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -58,10 +67,11 @@ const ThankYou = () => {
 
           <div className="max-w-2xl mx-auto">
             <a
-              href="https://www.youtube.com/watch?v=E0RZBIk9lXU"
+              href={SHAKESPEARE_VIDEO_URL}
               new-window="true"
               target="_blank"
               rel="noopener noreferrer"
+              onClickCapture={openShakespeareVideo}
               className="group relative block aspect-video rounded-lg overflow-hidden border border-border bg-navy cursor-pointer"
             >
               <img
