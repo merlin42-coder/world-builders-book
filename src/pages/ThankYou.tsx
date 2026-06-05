@@ -7,7 +7,7 @@ import { Download, Play } from "lucide-react";
 const { data: { publicUrl: PREVIEW_PDF_URL } } = supabase
   .storage
   .from("downloads")
-  .getPublicUrl("World Builders - The Book - PREVIEW.pdf");
+  .getPublicUrl("World-Builders-The-Book-PREVIEW.pdf");
 
 const { data: { publicUrl: SHAKESPEARE_COVER_URL } } = supabase
   .storage
