@@ -9,6 +9,16 @@ const { data: { publicUrl: PREVIEW_PDF_URL } } = supabase
   .from("downloads")
   .getPublicUrl("World Builders - The Book - PREVIEW.pdf");
 
+const { data: { publicUrl: NEWTON_COVER_URL } } = supabase
+  .storage
+  .from("images")
+  .getPublicUrl("newton-podcast-cover.png");
+
+const { data: { publicUrl: MICHELANGELO_COVER_URL } } = supabase
+  .storage
+  .from("images")
+  .getPublicUrl("michelangelo-odcast-cover.png");
+
 const ThankYou = () => {
   useEffect(() => {
     document.title = "Thank you — World Builders";
