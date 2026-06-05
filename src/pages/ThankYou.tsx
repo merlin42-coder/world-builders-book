@@ -59,6 +59,7 @@ const ThankYou = () => {
           <div className="max-w-2xl mx-auto">
             <a
               href="https://www.youtube.com/watch?v=E0RZBIk9lXU"
+              new-window="true"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative block aspect-video rounded-lg overflow-hidden border border-border bg-navy cursor-pointer"
