@@ -14,7 +14,19 @@ const { data: { publicUrl: SHAKESPEARE_COVER_URL } } = supabase
   .from("images")
   .getPublicUrl("shakespeare-podcast-cover.png");
 
+const { data: { publicUrl: NEWTON_COVER_URL } } = supabase
+  .storage
+  .from("images")
+  .getPublicUrl("newton-podcast-cover.png");
+
+const { data: { publicUrl: MICHELANGELO_COVER_URL } } = supabase
+  .storage
+  .from("images")
+  .getPublicUrl("michelangelo-podcast-cover.png");
+
 const SHAKESPEARE_VIDEO_URL = "https://www.youtube.com/watch?v=E0RZBIk9lXU";
+const NEWTON_VIDEO_URL = "https://www.youtube.com/watch?v=oJS-Ems1e7w";
+const MICHELANGELO_VIDEO_URL = "https://www.youtube.com/watch?v=fysSGaVq4aA";
 
 const ThankYou = () => {
   useEffect(() => {
