@@ -58,7 +58,7 @@ const ThankYou = () => {
             Watch the <span className="text-gold">World Builders</span> videos
           </h2>
           <p className="text-center text-muted-foreground mb-12">
-            Short companion films for the book — premiering soon.
+            Short companion films for the book — watch on YouTube.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
