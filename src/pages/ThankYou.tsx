@@ -66,7 +66,11 @@ const ThankYou = () => {
               href="https://www.youtube.com/watch?v=oJS-Ems1e7w"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://www.youtube.com/watch?v=oJS-Ems1e7w", "_blank", "noopener,noreferrer");
+              }}
+              className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy cursor-pointer"
             >
               <img
                 src={NEWTON_COVER_URL}
@@ -87,7 +91,11 @@ const ThankYou = () => {
               href="https://www.youtube.com/watch?v=fysSGaVq4aA"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://www.youtube.com/watch?v=fysSGaVq4aA", "_blank", "noopener,noreferrer");
+              }}
+              className="group relative aspect-video rounded-lg overflow-hidden border border-border bg-navy cursor-pointer"
             >
               <img
                 src={MICHELANGELO_COVER_URL}
