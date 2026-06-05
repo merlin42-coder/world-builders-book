@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type MouseEvent } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import WBLogo from "@/components/WBLogo";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,7 @@ const ThankYou = () => {
     document.title = "Thank you — World Builders";
   }, []);
 
-  const openShakespeareVideo = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const openShakespeareVideo = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation();
