@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import WBLogo from "@/components/WBLogo";
 import MailerLiteForm from "@/components/MailerLiteForm";
-import gregAsset from "@/assets/greg-gurmai.jpg.asset.json";
-import coverAsset from "@/assets/world-builders-cover.png.asset.json";
-import heroAsset from "@/assets/wb-hero-wide.png.asset.json";
 
 const STORAGE_BASE = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/images`;
 
-const heroImg = heroAsset.url;
+const heroImg = `${STORAGE_BASE}/wb-hero-wide.png`;
+const coverImg = `${STORAGE_BASE}/world-builders-book-cover.png`;
+const gregImg = `${STORAGE_BASE}/GregGurmai.jpg`;
 const worldsImg = `${STORAGE_BASE}/wb-worlds-card.png`;
 const comparisonsImg = `${STORAGE_BASE}/wb-comparisons-card.png`;
 const puzzleImg = `${STORAGE_BASE}/wb-puzzle-card.png`;
@@ -111,7 +110,7 @@ const Index = () => {
                 style={{ boxShadow: "0 30px 80px -20px hsl(var(--navy-deep) / 0.8), 0 0 0 1px hsl(var(--gold) / 0.15)" }}
               >
                 <img
-                  src={coverAsset.url}
+                  src={coverImg}
                   alt="World Builders book cover"
                   width={1040}
                   height={1470}
@@ -374,7 +373,7 @@ const Index = () => {
             <div className="md:col-span-2">
               <div className="aspect-square overflow-hidden rounded-lg border border-gold/40 bg-navy-deep">
                 <img
-                  src={gregAsset.url}
+                  src={gregImg}
                   alt="Portrait of Greg Gurmai, creator of World Builders"
                   loading="lazy"
                   className="w-full h-full object-cover"
