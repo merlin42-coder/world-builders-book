@@ -3,10 +3,11 @@ import WBLogo from "@/components/WBLogo";
 import MailerLiteForm from "@/components/MailerLiteForm";
 import gregAsset from "@/assets/greg-gurmai.jpg.asset.json";
 import coverAsset from "@/assets/world-builders-cover.png.asset.json";
+import heroAsset from "@/assets/wb-hero-wide.png.asset.json";
 
 const STORAGE_BASE = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/images`;
 
-const heroImg = `${STORAGE_BASE}/wb-hero-wide.png`;
+const heroImg = heroAsset.url;
 const worldsImg = `${STORAGE_BASE}/wb-worlds-card.png`;
 const comparisonsImg = `${STORAGE_BASE}/wb-comparisons-card.png`;
 const puzzleImg = `${STORAGE_BASE}/wb-puzzle-card.png`;
