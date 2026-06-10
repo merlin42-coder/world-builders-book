@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import WBLogo from "@/components/WBLogo";
 import MailerLiteForm from "@/components/MailerLiteForm";
+import gregAsset from "@/assets/greg-gurmai.jpg.asset.json";
 
 const STORAGE_BASE = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/images`;
 
@@ -58,8 +59,16 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Nav */}
       <header className="absolute top-0 left-0 right-0 z-20">
-        <div className="container flex items-center py-6">
+        <div className="container flex items-center justify-between py-6">
           <WBLogo className="[&_span]:text-parchment" />
+          <nav>
+            <button
+              onClick={() => scrollTo("about-creator")}
+              className="text-parchment/80 hover:text-gold transition-colors uppercase tracking-[0.2em] text-xs font-cinzel"
+            >
+              About the Creator
+            </button>
+          </nav>
         </div>
       </header>
 
@@ -337,6 +346,47 @@ const Index = () => {
               </div>
               <p className="font-cinzel text-gold text-[13px] uppercase tracking-wider mb-2">4. Evolve</p>
               <p className="font-lora text-parchment text-[14px] leading-snug">Clear the system map and advance to harder tiers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About the Creator */}
+      <section id="about-creator" className="py-28 bg-navy text-parchment">
+        <div className="container">
+          <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-start max-w-5xl mx-auto">
+            <div className="md:col-span-2">
+              <div className="aspect-square overflow-hidden rounded-lg border border-gold/40 bg-navy-deep">
+                <img
+                  src={gregAsset.url}
+                  alt="Portrait of Greg Gurmai, creator of World Builders"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="md:col-span-3">
+              <p className="text-gold uppercase tracking-[0.3em] text-xs mb-4">About the Creator</p>
+              <h2 className="font-display text-4xl md:text-5xl mb-8">
+                Hi, I'm <span className="text-gold italic">Greg</span>.
+              </h2>
+              <div className="font-lora text-parchment/90 text-[17px] leading-[1.9] space-y-5">
+                <p>
+                  A Playful Learning Architect: part Game-based Learning Designer, part UX Architect.
+                </p>
+                <p>
+                  I've spent fifteen years designing tools and products that help people learn and grow,
+                  from games and apps to leadership simulations built with Mihály Csíkszentmihályi's team.
+                  Before that, I was a data analyst. I was good at finding patterns in numbers. What I
+                  really wanted was to find patterns in people.
+                </p>
+                <p>
+                  I always hated memorizing dates. What I loved was figuring out why someone saw the
+                  world differently from everyone around them, and what that cost them. School gave us
+                  the facts, but nobody gave us the worldview behind them. I kept waiting for a book
+                  that would go there. After a while I realized I had to build it myself.
+                </p>
+              </div>
             </div>
           </div>
         </div>
