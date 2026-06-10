@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import WBLogo from "@/components/WBLogo";
 import MailerLiteForm from "@/components/MailerLiteForm";
 import gregAsset from "@/assets/greg-gurmai.jpg.asset.json";
+import coverAsset from "@/assets/world-builders-cover.png.asset.json";
 
 const STORAGE_BASE = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/images`;
 
@@ -84,25 +85,39 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/30 to-navy-deep" />
 
         <div className="container relative z-10 py-32 text-parchment">
-          <div className="max-w-3xl">
-            <p className="fade-up text-gold uppercase tracking-[0.4em] text-xs mb-6">
-              An illustrated nonfiction book
-            </p>
-            <h1 className="fade-up fade-up-delay-1 font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-8">
-              Eighteen figures.<br />
-              Eighteen <span className="italic text-gold">worlds.</span><br />
-              One hidden puzzle in each.
-            </h1>
-            <p className="fade-up fade-up-delay-2 font-lora text-[17px] text-parchment/80 max-w-2xl mb-10 leading-relaxed">
-              A heightened capacity to decode system patterns others completely miss — that's what these 18 worlds leave you with.
-            </p>
+          <div className="grid md:grid-cols-12 gap-12 items-center">
+            <div className="md:col-span-7">
+              <p className="fade-up text-gold uppercase tracking-[0.4em] text-xs mb-6">
+                An illustrated nonfiction book
+              </p>
+              <h1 className="fade-up fade-up-delay-1 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] mb-8">
+                See the true <span className="italic text-gold">essence</span> behind history's greatest minds.
+              </h1>
+              <p className="fade-up fade-up-delay-2 font-lora text-[18px] text-parchment/85 max-w-2xl mb-10 leading-relaxed">
+                Understand the world first as it is. Then build your own.
+              </p>
 
-            <div id="waitlist" className="fade-up fade-up-delay-3 max-w-xl">
-              <MailerLiteForm />
+              <div id="waitlist" className="fade-up fade-up-delay-3 max-w-xl">
+                <MailerLiteForm />
+              </div>
+              <p className="fade-up fade-up-delay-4 text-xs text-parchment/60 mt-4">
+                Join the waitlist. We'll email you the preview PDF and launch news. No spam.
+              </p>
             </div>
-            <p className="fade-up fade-up-delay-4 text-xs text-parchment/60 mt-4">
-              Join the waitlist. We'll email you the preview PDF and launch news. No spam.
-            </p>
+            <div className="md:col-span-5 fade-up fade-up-delay-2 flex justify-center md:justify-end">
+              <div
+                className="relative w-full max-w-[360px] rounded-md overflow-hidden border border-gold/30"
+                style={{ boxShadow: "0 30px 80px -20px hsl(var(--navy-deep) / 0.8), 0 0 0 1px hsl(var(--gold) / 0.15)" }}
+              >
+                <img
+                  src={coverAsset.url}
+                  alt="World Builders book cover"
+                  width={1040}
+                  height={1470}
+                  className="w-full h-auto block"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
