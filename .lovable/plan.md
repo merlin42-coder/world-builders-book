@@ -1,43 +1,27 @@
+## Changes
 
-## Issues
+### 1. Upload hero image to Cloud `images` bucket
+- Download `wb-hero-wide.png` from the Lovable CDN to `/tmp`
+- Upload it to the `images` bucket via the storage tool as `wb-hero-wide.png`
 
-**1. MailerLite signups aren't being recorded**
+### 2. `src/pages/Index.tsx` — switch 3 images from Lovable CDN assets to Cloud `images` bucket
+Use the existing `STORAGE_BASE` constant for all three:
+- **Hero background**: `${STORAGE_BASE}/wb-hero-wide.png` (fixes the missing-image bug on GitHub Pages — the previous `/__l5e/...` URL only resolves on Lovable hosting)
+- **Hero book cover**: `${STORAGE_BASE}/world-builders-book-cover.png`
+- **Greg portrait (About the Creator)**: `${STORAGE_BASE}/GregGurmai.jpg`
 
-The current code POSTs to MailerLite's JSONP endpoint with `mode: "no-cors"`. That endpoint is JSONP (designed for GET requests with a `?callback=` param), not a JSON POST API. With `no-cors`, the browser sends the request but we can't read the response — and in practice MailerLite's JSONP endpoint silently ignores malformed POSTs, so the email never lands in the list. The user always sees "success" because we navigate regardless.
+Remove the three now-unused asset imports (`heroAsset`, `coverAsset`, `gregAsset`).
 
-**2. Thank You page download link is broken**
+### 3. Delete the obsolete `.asset.json` pointer files
+- `src/assets/wb-hero-wide.png.asset.json`
+- `src/assets/world-builders-cover.png.asset.json`
+- `src/assets/greg-gurmai.jpg.asset.json`
 
-It points to `/world-builders-preview.pdf` (a local file that doesn't exist). Needs to point to the Google Drive PDF, using a direct-download URL so the button actually downloads instead of opening Drive's viewer.
-
----
-
-## Fix
-
-### A. Reliable MailerLite signup via an edge function
-
-Use MailerLite's official Subscribers API from a Lovable Cloud edge function. This is the only reliable server-side way to add subscribers (the public embedded-form endpoint is fragile and CORS-restricted).
-
-Steps:
-1. Ask the user for their **MailerLite API key** (Account → Integrations → API → Generate new token) and store it as a secret `MAILERLITE_API_KEY`.
-2. Optionally ask for a **Group ID** so signups land in the "World Builders waitlist" group (otherwise they go to the default subscriber list).
-3. Create edge function `subscribe-waitlist` that calls:
-   `POST https://connect.mailerlite.com/api/subscribers`
-   with `{ email, groups: [groupId] }` and `Authorization: Bearer <key>`.
-4. Update `Index.tsx` to call this function via `supabase.functions.invoke('subscribe-waitlist', { body: { email } })`. Only navigate to `/thank-you` on success; show a toast error on failure.
-
-### B. Fix the download link
-
-In `ThankYou.tsx`, change `PREVIEW_PDF_URL` to the Google Drive direct-download URL:
-
+### 4. `index.html` — update `og:image` to an absolute Supabase URL
 ```
-https://drive.google.com/uc?export=download&id=17G74sN45qm3XiVb0U_jw1MOO4kUA43Wx
+https://qpaxslkyjklwcfoudfme.supabase.co/storage/v1/object/public/images/World-Builders-Book-social.png
 ```
+(Social crawlers require an absolute URL — relative paths like `images/...` won't preview.)
 
-Keep the existing button styling. Add `target="_blank" rel="noopener"` so it works even if Drive redirects to a confirmation page for large files.
-
----
-
-## Questions before implementing
-
-1. Do you want me to set up the MailerLite API integration (recommended)? I'll need you to paste a **MailerLite API token**.
-2. Do you have a specific **Group ID** in MailerLite for the World Builders waitlist, or should subscribers just be added to the general list?
+### Result
+All images load on both the Lovable preview and the GitHub Pages deployment, since every URL is now an absolute Cloud storage URL.
