@@ -245,7 +245,7 @@ const Index = () => {
                 </p>
                 <p>
                   That's the difference between knowing history and understanding
-                  it. World Builders is about the second thing.
+                  it. World Builders is about the second thing.&nbsp;And once you see history that way, you can't unsee it.
                 </p>
               </div>
             </div>
