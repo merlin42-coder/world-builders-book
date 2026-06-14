@@ -9,8 +9,14 @@ const NotFound = () => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
+  const canonicalUrl = `https://world-builders-book.lovable.app${location.pathname}`;
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">
+      <Helmet>
+        <title>Page Not Found — World Builders</title>
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>
         <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
