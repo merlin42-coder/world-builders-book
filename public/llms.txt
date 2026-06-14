@@ -1,0 +1,10 @@
+# World Builders
+
+> An illustrated nonfiction book teaching history, science, philosophy, and strategy through the worlds of 18 remarkable people.
+
+World Builders is a book by Greg Gurmai that explores the lives and ideas of extraordinary individuals who shaped our world. Each chapter dives into a different "world builder" — from scientists and philosophers to strategists and leaders — revealing the principles and patterns that drive human progress.
+
+## Pages
+
+- [Home](/): Discover the book, explore the world builders, meet the author, and join the community for a free preview and podcast episodes.
+- [Thank You](/thank-you): Confirmation page after signing up to receive the free preview and podcast updates.
