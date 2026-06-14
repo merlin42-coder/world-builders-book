@@ -53,6 +53,7 @@ const Index = () => {
     document.title = "World Builders — The Book";
   }, []);
 
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
