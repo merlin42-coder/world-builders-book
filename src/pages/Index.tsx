@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import WBLogo from "@/components/WBLogo";
 import MailerLiteForm from "@/components/MailerLiteForm";
 
@@ -52,12 +53,17 @@ const Index = () => {
     document.title = "World Builders — The Book";
   }, []);
 
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>World Builders — The Book</title>
+        <link rel="canonical" href="https://world-builders-book.lovable.app/" />
+      </Helmet>
       {/* Nav */}
       <header className="absolute top-0 left-0 right-0 z-20">
         <div className="container flex items-center justify-between py-6">
