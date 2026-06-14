@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import WBLogo from "@/components/WBLogo";
 import { Button } from "@/components/ui/button";
@@ -35,6 +36,16 @@ const ThankYou = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>Thank you for joining — World Builders</title>
+        <meta name="description" content="Your free preview of World Builders is ready to download — plus companion podcast episodes for the book." />
+        <link rel="canonical" href="https://world-builders-book.lovable.app/thank-you" />
+        <meta property="og:title" content="Thank you for joining — World Builders" />
+        <meta property="og:description" content="Your free preview of World Builders is ready to download — plus companion podcast episodes for the book." />
+        <meta property="og:url" content="https://world-builders-book.lovable.app/thank-you" />
+        <meta name="twitter:title" content="Thank you for joining — World Builders" />
+        <meta name="twitter:description" content="Your free preview of World Builders is ready to download — plus companion podcast episodes for the book." />
+      </Helmet>
       <header className="py-8 flex justify-center">
         <WBLogo />
       </header>
