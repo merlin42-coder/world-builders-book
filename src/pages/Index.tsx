@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import WBLogo from "@/components/WBLogo";
 import MailerLiteForm from "@/components/MailerLiteForm";
 
